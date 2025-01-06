@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>JavaScript Assignment</h1>
+    <p>Learning JavaScript is fun!</p>
+    <div id="dynamic-content"></div>
+    
+<div id="greeting"></div>
+<div id="eligibilityMessage"></div>
+<ol id="list"></ol>
+
+<script>
+
+    function greetUser(name) {
+        return "Hello, " + name + "!"; 
+    }
+
+    const greetingElement = document.getElementById("greeting");
+    const userName = prompt("Enter your name:"); 
+
+    if (userName) { 
+      const greetingMessage = greetUser(userName);
+      greetingElement.textContent = greetingMessage; 
+    } 
+
+// Question 4 (Part 2)
+
+const ageString = prompt("Please enter your age here:");
+
+if (ageString === null || ageString === "") {
+    document.getElementById("eligibilityMessage").textContent = "No age provided.";
+} else {
+    const age = parseInt(ageString);
+
+    // If successful
+    if (isNaN(age)) {
+        document.getElementById("eligibilityMessage").textContent = "Invalid age entered. Please enter a number.";
+    } else if (age >= 18) {
+        document.getElementById("eligibilityMessage").textContent = "You are eligible to vote!";
+    } else {
+        document.getElementById("eligibilityMessage").textContent = "You are not yet eligible to vote.";
+    }
+}
+
+// Question 5 (Loop)
+const numberList= document.getElementById("list");
+
+for(let i=1; i <=10; i++){
+    const listItem = document.createElement("li");
+    listItem.textContent = i;
+    numberList.appendChild(listItem);
+}
+
+// Question 7
+
+// Changing the header element
+const heading= document.querySelector("h1");
+heading.textContent="JavaScript in Action!"
+
+const dynamicDiv=document.getElementById("dynamic-content");
+
+const newP= document.createElement("p")
+newP.textContent="This content was added dynamically using JavaScript.";
+
+dynamicDiv.appendChild(newP)
+
+</script>
+    
+</body>
+</html>
