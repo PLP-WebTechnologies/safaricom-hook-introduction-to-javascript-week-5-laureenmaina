@@ -1,7 +1,5 @@
 // Question 1:Variables and Data Types
 
-const { log } = require('console');
-
 // String 
 let name = "Laurine";
 console.log("Name: " + name + " (Type: " + typeof name + ")");
